@@ -88,7 +88,7 @@ const Todo = () => {
                     })}   
                     </div>
                 <div className="showItems">
-                    <button className='btn effect-04' data-sm-link-text="Remove All" onClick={deleteAll}><span>CHECK LIST</span></button>
+                    <button className='btn effect-04' data-sm-link-text="REMOVE ALL" onClick={deleteAll}><span>CHECK LIST</span></button>
                 </div>
             </div>
         </div>
