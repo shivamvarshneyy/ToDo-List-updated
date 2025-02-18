@@ -1,22 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './css/style.css';
 import logo from'./images/logo.png';
-
-const getLocalItems = () => {
-    const list = localStorage.getItem('lists');
-    return list ? JSON.parse(list) : [];
-};
-
+import {
+    getLocalStorageTodoData,
+    setLocalStorageTodoData
+} from "./LocalStorage";
 
 const Todo = () => {
     const [item, setItem] = useState("");
-    const [store, setStore] = useState(getLocalItems());
+    const [store, setStore] = useState(getLocalStorageTodoData() || []);  // ✅ FIXED: Prevents null state
     const [toggleSubmit, setToggleSubmit] = useState(true);
     const [iseditItem, setIsEditItem] = useState('');
 
     const inputEvent = (event) => {
         setItem(event.target.value);
     }
+
+    useEffect(() => {
+        setLocalStorageTodoData(store);
+    }, [store]);
 
     const setEvent = () => {
         if(!item){
