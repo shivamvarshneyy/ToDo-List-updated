@@ -8,7 +8,7 @@ import {
 
 const Todo = () => {
     const [item, setItem] = useState("");
-    const [store, setStore] = useState(getLocalStorageTodoData() || []);  // ✅ FIXED: Prevents null state
+    const [store, setStore] = useState(getLocalStorageTodoData() || []);  
     const [toggleSubmit, setToggleSubmit] = useState(true);
     const [iseditItem, setIsEditItem] = useState('');
 
@@ -57,7 +57,6 @@ const Todo = () => {
         let newEditItem = store.find((ele)=>{
             return id===ele.id;
         });
-        // console.log(newEditItem);
         setToggleSubmit(false);
         setItem(newEditItem.name);
         setIsEditItem(id);
@@ -90,7 +89,7 @@ const Todo = () => {
                     })}   
                     </div>
                 <div className="showItems">
-                    <button className='btn effect-04' data-sm-link-text="REMOVE ALL" onClick={deleteAll}><span>CHECK LIST</span></button>
+                    <button className='btn effect-04' data-sm-link-text="REMOVE ALL" title="Clear All Items" onClick={deleteAll}><span>CHECK LIST</span></button>
                 </div>
             </div>
         </div>
