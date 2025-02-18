@@ -1,0 +1,232 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #000000, #000000);
+    padding: 20px;
+}
+
+/* Main Container */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 75vh;
+}
+
+/* Todo Box */
+.child {
+    background: linear-gradient(135deg, #283f3c, #01171a);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgb(3, 255, 205);
+    width: 120%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+/* Logo */
+figure {
+    margin-bottom: 20px;
+}
+
+figure img {
+    width: 80px;
+}
+
+figcaption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(3, 255, 205);
+}
+
+/* Input Box */
+.addItems {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+}
+
+.addItems input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 1rem;
+    background-color: #000000;
+    color: #fff;
+}
+
+.addItems i {
+    font-size: 1.5rem;
+    color: #d7d7d7;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.addItems i:hover {
+    color: hsl(167, 89%, 47%);
+}
+
+/* Item List */
+.showItems {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Scrollbar for better mobile experience */
+.showItems::-webkit-scrollbar {
+    width: 5px;
+}
+
+.showItems::-webkit-scrollbar-thumb {
+    background: rgb(2, 163, 131);
+    border-radius: 5px;
+}
+
+.eachItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    background: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    color: rgb(255, 255, 255);
+}
+
+.eachItem:hover {
+    background: #070000;
+    color:hsl(174, 73%, 41%)
+}
+
+.eachItem h3 {
+    flex: 1;
+    font-size: 1rem;
+    text-align: justify;
+    word-break: break-word;
+    
+}
+
+.eachItem i {
+    font-size: 1.2rem;
+    color: hsl(174, 73%, 41%);
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.eachItem .edit:hover {
+    color: #fedc00;
+}
+.eachItem .del:hover {
+    color: #fe002a;
+}
+
+/* Remove All Button */
+.btn {
+    background: hsl(174, 73%, 41%);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+    position: relative;
+    width: 100%;
+}
+
+.btn:hover {
+    background: #ff0000;
+}
+
+/* Checklist Button */
+.effect-04 {
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+}
+
+.effect-04 span {
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.effect-04:hover span {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.effect-04:before {
+    content: attr(data-sm-link-text);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+    opacity: 0;
+    color: white;
+}
+
+.effect-04:hover:before {
+    top: 35%;
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .child {
+        width: 100%;
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    figcaption {
+        font-size: 1rem;
+    }
+
+    .addItems {
+        flex-direction: row;
+        padding: 8px;
+    }
+
+    .addItems input {
+        font-size: 0.9rem;
+    }
+
+    .addItems i {
+        font-size: 1.3rem;
+    }
+
+    .eachItem h3 {
+        font-size: 0.9rem;
+    }
+
+    .eachItem i {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
