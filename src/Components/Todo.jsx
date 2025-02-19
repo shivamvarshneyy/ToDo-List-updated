@@ -77,7 +77,6 @@ const Todo = () => {
                         <i class="fa-duotone fa-solid fa-circle-check" title="Update Item" onClick={setEvent}></i>
                     }
                 </div>
-{/*                  */}
                 <div className="showItems">
                     {store.map((ele)=>{
                         return(
